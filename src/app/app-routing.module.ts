@@ -7,6 +7,7 @@ import { PropinsilistComponent } from './propinsi/propinsilist.component';
 import { KabupatenComponent } from './kabupaten/kabupaten.component';
 import { ListKabupatenComponent } from './kabupaten/listkabupaten.component';
 
+
 const routes: Routes = [
   {
     path:"",
@@ -37,6 +38,16 @@ const routes: Routes = [
   {
     path:"fkabupaten",
     component:KabupatenComponent
+  },
+  {
+    path:"ekabupaten/:id",
+    component:KabupatenComponent,
+    pathMatch:"full"
+  },
+  {
+    path:"editprov/:id",
+    component:PropinsiComponent,
+    pathMatch:"full"
   }
 ];
 

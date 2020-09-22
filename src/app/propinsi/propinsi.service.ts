@@ -23,4 +23,9 @@ export class PropinsiService {
     return this.httpKlien.get(environment.baseUrl +'/listprovinsijson')
     .pipe(map(data => <Provinsi[]> data));
   }
+
+  listProvinsibyID(id: string): Observable<Provinsi>{
+    return this.httpKlien.get(environment.baseUrl +'/listprovinsijson/'+id)
+    .pipe(map(data => <Provinsi> data));
+  }
 }

@@ -4,6 +4,7 @@ import { KabupatenService } from './kabupaten.service';
 import { Kabupaten } from './kabupaten';
 import { Provinsi } from '../propinsi/provinsi';
 import { PropinsiService } from '../propinsi/propinsi.service'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-kabupaten',
@@ -12,13 +13,12 @@ import { PropinsiService } from '../propinsi/propinsi.service'
   providers: [KabupatenService,PropinsiService]
 })
 export class KabupatenComponent implements OnInit {
-
+  id : string;
   addKabForm: FormGroup;
   listProv : Provinsi[];
 
-  constructor(private kabupatenService : KabupatenService, private propinsiService : PropinsiService) { }
+  constructor(private kabupatenService : KabupatenService, private propinsiService : PropinsiService, private route: ActivatedRoute) { 
 
-  ngOnInit(): void {
     this.addKabForm = new FormGroup( 
       {
       "kodeBPS": new FormControl
@@ -35,6 +35,19 @@ export class KabupatenComponent implements OnInit {
   }, error => {
       console.log(error);
   });
+  }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(rute => {
+      this.id = rute.id;
+      this.kabupatenService.getKabupatenID(this.id).subscribe(data => {
+        this.addKabForm.get('kodeBPS').setValue(data.kodeBPS);
+        this.addKabForm.get('namaKabupaten').setValue(data.namaKabupaten);
+        this.addKabForm.get('idProvinsi').setValue(data.idProvinsi);
+      }, error => {
+        alert("Data tidak ditemukan!");
+      });
+      });
 }
 
 simpanKab(): void{
