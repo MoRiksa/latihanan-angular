@@ -1,0 +1,32 @@
+ 
+        <div layout:fragment="content">
+            
+            <div class="row">
+                <div class="col-md-8">
+                    <form [formGroup]="addProvinsiForm" (ngSubmit)="simpanProv()">
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-10 col-form-label">ID Provinsi</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" formControlName="idProvinsi" placeholder="ID Provinsi">
+                                <span *ngIf="!addProvinsiForm.get('idProvinsi').valid && addProvinsiForm.get('idProvinsi').touched" class="help-block"> ID WAJIB DIISI!</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-10 col-form-label">Nama Provinsi</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" formControlName="namaProvinsi" placeholder="Nama Provinsi">
+                               <span *ngIf="!addProvinsiForm.get('namaProvinsi').valid && addProvinsiForm.get('namaProvinsi').touched" class="help-block"> NAMA PROVINSI WAJIB DIISI!</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Tambah</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>        
+                
+           
+        </div>

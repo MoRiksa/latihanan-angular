@@ -1,0 +1,24 @@
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>#</th>
+                        
+                    </tr>
+                </thead>
+                 <tbody>
+                    <tr *ngFor="let p of listProv">
+                        <td>{{p.idProvinsi}}</td>
+                        <td>{{p.namaProvinsi}}</td>
+                        <td><a routerLink="{{p.idProvinsi}}">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+</div>
+</div>
