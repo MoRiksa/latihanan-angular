@@ -6,6 +6,8 @@ import { AboutComponent } from './about/about.component';
 import { PropinsilistComponent } from './propinsi/propinsilist.component';
 import { KabupatenComponent } from './kabupaten/kabupaten.component';
 import { ListKabupatenComponent } from './kabupaten/listkabupaten.component';
+import { ListKecamatanComponent } from './kecamatan/listkecamatan.component';
+import { KecamatanComponent } from './kecamatan/kecamatan.component';
 
 
 const routes: Routes = [
@@ -42,6 +44,19 @@ const routes: Routes = [
   {
     path:"ekabupaten/:id",
     component:KabupatenComponent,
+    pathMatch:"full"
+  },
+  {
+    path:"listkecamatan",
+    component:ListKecamatanComponent
+  },
+  {
+    path:"fkecamatan",
+    component:KecamatanComponent
+  },
+  {
+    path:"ekecamatan/:id",
+    component:KecamatanComponent,
     pathMatch:"full"
   },
   {

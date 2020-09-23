@@ -3,20 +3,20 @@
             
             <div class="row">
                 <div class="col-md-8">
-                    <form [formGroup]="addKabForm" (ngSubmit)="simpanKab()">
+                    <form [formGroup]="addKecForm" (ngSubmit)="simpanKec()">
                         
                         <div class="form-group row">
-                            <label class="col-sm-10 col-form-label">ID Kabupaten</label>
+                            <label class="col-sm-10 col-form-label">ID Kecamatan</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" formControlName="kodeBPS" placeholder="ID Kabupaten">
+                                <input type="number" class="form-control" formControlName="kodeBPS" placeholder="ID Kecamatan">
                             
                             </div>
                         </div>
                         
                         <div class="form-group row">
-                            <label class="col-sm-10 col-form-label">Nama Kabupaten</label>
+                            <label class="col-sm-10 col-form-label">Nama Kecamatan</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" formControlName="namaKabupaten" placeholder="Nama Kabupaten">
+                                <input type="text" class="form-control" formControlName="namaKecamatan" placeholder="Nama Kecamatan">
                              
                             </div>
                         </div>
@@ -24,9 +24,21 @@
                         <div class="form-group row">
                             <label class="col-sm-10 col-form-label">Nama Provinsi</label>
                             <div class="col-sm-10">
-                        <select class="form-control selectpicker" id="select" formControlName="idProvinsi">
+                        <select class="form-control selectpicker" (change)="ambilKabupaten()" formControlName="idProvinsi">
                             <option *ngFor="let p of listProv" value="{{p.idProvinsi}}" 
-                            [disabled]="addKabForm.get('idProvinsi').valid">{{p.namaProvinsi}}</option>
+                           >{{p.namaProvinsi}}</option>
+                        </select>
+                      
+                            </div>
+                            
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-10 col-form-label">Nama Kabupaten</label>
+                            <div class="col-sm-10">
+                        <select class="form-control selectpicker" formControlName="idKabupaten">
+                            <option *ngFor="let k of listKab" value="{{k.kodeBPS}}" 
+                           >{{k.namaKabupaten}}</option>
                         </select>
                       
                             </div>

@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PropinsilistComponent } from './propinsi/propinsilist.component';
 import { KabupatenComponent } from './kabupaten/kabupaten.component';
 import { ListKabupatenComponent } from './kabupaten/listkabupaten.component';
+import { KecamatanComponent } from './kecamatan/kecamatan.component';
+import { ListKecamatanComponent } from './kecamatan/listkecamatan.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ListKabupatenComponent } from './kabupaten/listkabupaten.component';
     PropinsiComponent,
     PropinsilistComponent,
     KabupatenComponent,
-    ListKabupatenComponent
+    ListKabupatenComponent,
+    KecamatanComponent,
+    ListKecamatanComponent
   ],
   imports: [
     BrowserModule,

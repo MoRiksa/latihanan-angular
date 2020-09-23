@@ -1,0 +1,28 @@
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID Kecamatan</th>
+                        <th>Nama Kecamatan</th>
+                        <th>Nama Provinsi</th>
+                        <th>Nama Kabupaten</th>
+                        <th>#</th>
+                        
+                    </tr>
+                </thead>
+                 <tbody>
+                    <tr *ngFor="let k of listKec">
+                        <td>{{k.kodeBPS}}</td>
+                        <td>{{k.namaKecamatan}}</td>
+                        <td>{{k.provinsi.namaProvinsi}}</td>
+                        <td>{{k.kabupaten.namaKabupaten}}</td>
+                        <td><a routerLink="/ekecamatan/{{k.kodeBPS}}">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+</div>
+</div>
