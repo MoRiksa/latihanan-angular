@@ -4,7 +4,9 @@ export class Kecamatan {
     kodeBPS : number;
     namaKecamatan : string;
     idKabupaten : number;
+    namaKabupaten : string;
     kabupaten : Kabupaten;
+    namaProvinsi : string;
     idProvinsi : number;
     provinsi : Provinsi;
 }

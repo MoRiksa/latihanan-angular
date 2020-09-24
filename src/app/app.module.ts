@@ -13,6 +13,7 @@ import { KabupatenComponent } from './kabupaten/kabupaten.component';
 import { ListKabupatenComponent } from './kabupaten/listkabupaten.component';
 import { KecamatanComponent } from './kecamatan/kecamatan.component';
 import { ListKecamatanComponent } from './kecamatan/listkecamatan.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -26,13 +27,15 @@ import { ListKecamatanComponent } from './kecamatan/listkecamatan.component';
     ListKabupatenComponent,
     KecamatanComponent,
     ListKecamatanComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

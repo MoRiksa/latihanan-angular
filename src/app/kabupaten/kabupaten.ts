@@ -4,4 +4,5 @@ export class Kabupaten {
     namaKabupaten : string;
     provinsi : Provinsi;
     idProvinsi : number;
+    namaProvinsi : string;
 }
